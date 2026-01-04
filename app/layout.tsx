@@ -18,7 +18,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${plusJakartaSans.className} antialiased bg-linear-to-b from-cyan-50 from-0% to-indigo-50 to-100%`}
-      > <Navbar />
+      >
+        <Navbar />
         {children}
         <Footer />
       </body>
