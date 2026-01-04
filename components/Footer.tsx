@@ -10,14 +10,13 @@ import { SiFacebook, SiInstagram, SiX } from '@icons-pack/react-simple-icons';
 import Image from 'next/image';
 
 const quickLinks = [
-  { name: 'Beranda', href: '#' },
-  { name: 'Cohort Class', href: '#' },
-  { name: 'Kelas Privat', href: '#' },
-  { name: 'Tentang Kami', href: '#' },
-  { name: 'Testimoni', href: '#' },
-  { name: 'FAQ', href: '#' },
-];
-
+  { name: 'Beranda', href: '#home' },
+  { name: 'Cohort Class', href: '#cohort' },
+  { name: 'Kelas Privat', href: '#privat' },
+  { name: 'Tentang Kami', href: '#about' },
+  { name: 'Testimoni', href: '#testimoni' },
+  { name: 'FAQ', href: '#faq' },
+]
 const socialLinks = [
   { name: 'Instagram', icon: <SiInstagram size={24} />, href: '#' },
   { name: 'Facebook', icon: <SiFacebook size={24} />, href: '#' },
