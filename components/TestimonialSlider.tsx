@@ -1,55 +1,55 @@
-'use client';
+"use client";
 
 import { StaticImageData } from "next/image";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import profilePicture from "@/public/images/home-about-doctor-holding-pen.png";
 import TestimonialCard from "./TestimonialCard";
 
 type Testimonial = {
-  id: number,
-  content: string
-  name: string
-  role: string
-  avatar: StaticImageData
-}
+  id?: number;
+  content: string;
+  name: string;
+  role?: string;
+};
 
-const testimonials: Testimonial[] = [
+const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
-    content: "Di blok Repro aku selalu bingung hubungan hormon, siklus, dan penyakit. Tapi di cohort Repro StrataAcademy dijelasin dengan mapping yang rapi banget.",
+    content:
+      "Di blok Repro aku selalu bingung hubungan hormon, siklus, dan penyakit. Tapi di cohort Repro StrataAcademy dijelasin dengan mapping yang rapi banget.",
     name: "Mahasiswa Preklinik",
     role: "Blok Reproduksi",
-    avatar: profilePicture
   },
   {
     id: 2,
-    content: "Materi yang disampaikan sangat relevan dengan kasus klinis sehari-hari. Mentornya juga sangat suportif.",
+    content:
+      "Materi yang disampaikan sangat relevan dengan kasus klinis sehari-hari. Mentornya juga sangat suportif.",
     name: "Mahasiswa Preklinik",
     role: "Blok Kardiologi",
-    avatar: profilePicture
   },
   {
     id: 3,
-    content: "Sangat puas dengan hasilnya. Performa website meningkat drastis setelah menggunakan template ini.",
+    content:
+      "Sangat puas dengan hasilnya. Performa website meningkat drastis setelah menggunakan template ini.",
     name: "Mahasiswa Preklinik",
     role: "Blok Respirasi",
-    avatar: profilePicture
   },
   {
     id: 4,
-    content: "Desain yang sangat bersih dan kode yang mudah dipahami. Sangat membantu.",
+    content:
+      "Desain yang sangat bersih dan kode yang mudah dipahami. Sangat membantu.",
     name: "Dokter Muda",
     role: "Stase Bedah",
-    avatar: profilePicture
   },
 ];
 
-export default function TestimonialSlider() {
+export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
   return (
-    <div className="
+    <div
+      className="
       w-full!
       /* CUSTOM PAGINATION STYLES */
       [&_.swiper-pagination-bullet]:w-3.5! 
@@ -61,7 +61,8 @@ export default function TestimonialSlider() {
       [&_.swiper-pagination-bullet-active]:w-8 
       [&_.swiper-pagination-bullet-active]:rounded-full 
       [&_.swiper-pagination-bullet-active]:bg-dark-primary!
-      ">
+      "
+    >
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={24}
@@ -72,7 +73,6 @@ export default function TestimonialSlider() {
           disableOnInteraction: false,
         }}
         loop={true}
-
         // --- BREAKPOINTS ---
         breakpoints={{
           640: {
@@ -84,17 +84,17 @@ export default function TestimonialSlider() {
             spaceBetween: 30,
           },
         }}
-
-        style={{
-          "--swiper-pagination-bottom": "0px",
-          "--swiper-pagination-bullet-horizontal-gap": "6px"
-        } as React.CSSProperties}
-
+        style={
+          {
+            "--swiper-pagination-bottom": "0px",
+            "--swiper-pagination-bullet-horizontal-gap": "6px",
+          } as React.CSSProperties
+        }
         className="pb-16!"
       >
-        {testimonials.map((item) => (
+        {(data && data.length ? data : defaultTestimonials).map((item, i) => (
           // Pastikan tinggi otomatis agar rapi
-          <SwiperSlide key={item.id} className="h-auto lg:min-w-125">
+          <SwiperSlide key={item.id ?? i} className="h-auto lg:min-w-125">
             <TestimonialCard item={item} />
           </SwiperSlide>
         ))}

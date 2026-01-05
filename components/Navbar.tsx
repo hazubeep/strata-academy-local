@@ -7,12 +7,13 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import logo from "@/public/logo.png"
 import Button from './Button'
+import CustomLink from './CustomLink'
 
 const navLinks = [
   { name: 'Beranda', href: '#home' },
+  { name: 'Tentang Kami', href: '#about' },
   { name: 'Cohort Class', href: '#cohort' },
   { name: 'Kelas Privat', href: '#privat' },
-  { name: 'Tentang Kami', href: '#about' },
   { name: 'Testimoni', href: '#testimoni' },
   { name: 'FAQ', href: '#faq' },
 ]
@@ -102,8 +103,20 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
-          <Button className='px-10' variant='primary' size='md'>Daftar</Button>
-          <Button className='px-10' variant='secondary' size='md'>Masuk</Button>
+          <CustomLink
+            className='px-10'
+            href='https://strataacademy.id/register'
+            variant='primary'
+            size='md'>Daftar
+          </CustomLink>
+
+          <CustomLink
+            className='px-10'
+            href='https://strataacademy.id/login'
+            variant='secondary'
+            size='md'>Masuk
+          </CustomLink>
+
         </div>
 
         {/* Mobile Hamburger */}
@@ -141,10 +154,22 @@ export default function Navbar() {
 
             <div className="mt-6 flex gap-3 w-full">
               <div className="w-full">
-                <Button variant='primary' size='md' className="w-full justify-center">Daftar</Button>
+                <CustomLink
+                  className='w-full justify-center'
+                  href='https://strataacademy.id/register'
+                  variant='primary'
+                  size='md'>Daftar
+                </CustomLink>
+
               </div>
               <div className="w-full">
-                <Button variant='secondary' size='md' className="w-full justify-center">Masuk</Button>
+                <CustomLink
+                  className='w-full justify-center'
+                  href='https://strataacademy.id/login'
+                  variant='secondary'
+                  size='md'>Masuk
+                </CustomLink>
+
               </div>
             </div>
           </motion.div>

@@ -73,6 +73,7 @@ export default function OrderForm() {
       <div className="col-span-1 mt-2">
         <input
           type="number"
+          min={0}
           name="jumlah-pertemuan"
           placeholder="Jumlah Pertemuan"
           className={inputBaseStyles}

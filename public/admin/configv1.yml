@@ -63,6 +63,18 @@ collections:
             name: "cohort"
             widget: "object"
             fields:
+              - {
+                  label: "Judul Section",
+                  name: "title",
+                  widget: "string",
+                  default: "Kelas Cohort",
+                }
+              - {
+                  label: "Deskripsi Section",
+                  name: "description",
+                  widget: "text",
+                  default: "Pelatihan dan bimbingan berbasis evidence untuk mahasiswa kedokteran.",
+                }
               - label: "Daftar Paket"
                 name: "packages"
                 widget: "list"
@@ -93,6 +105,18 @@ collections:
             name: "private_section"
             widget: "object"
             fields:
+              - {
+                  label: "Judul Section",
+                  name: "title",
+                  widget: "string",
+                  default: "Kelas Private",
+                }
+              - {
+                  label: "Deskripsi Section",
+                  name: "description",
+                  widget: "text",
+                  default: "Bimbingan intensif satu lawan satu untuk hasil yang maksimal.",
+                }
               - label: "Daftar Paket"
                 name: "packages"
                 widget: "list"
@@ -122,6 +146,18 @@ collections:
             name: "testimonial"
             widget: "object"
             fields:
+              - {
+                  label: "Judul Section",
+                  name: "title",
+                  widget: "string",
+                  default: "Testimoni",
+                }
+              - {
+                  label: "Deskripsi Section",
+                  name: "description",
+                  widget: "text",
+                  default: "Pendapat mahasiswa setelah ikut kelas.",
+                }
               - label: "Daftar Testimoni"
                 name: "items"
                 widget: "list"
@@ -140,6 +176,12 @@ collections:
             name: "faq_section" 
             widget: "object"
             fields:
+              - {
+                  label: "Judul Section",
+                  name: "title",
+                  widget: "string",
+                  default: "Pertanyaan Umum",
+                }
               - label: "Daftar Pertanyaan"
                 name: "faqs"
                 widget: "list" 
