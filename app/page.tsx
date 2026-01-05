@@ -7,6 +7,7 @@ import Order from "@/components/sections/Order";
 import Private from "@/components/sections/Private";
 
 export default function Home() {
+
   return (
     <main className="pt-14 md:pt-0 overflow-x-hidden">
 

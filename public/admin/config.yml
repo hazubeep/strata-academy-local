@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: levanadigitalagency-dev/StrataAcademy # Ganti ini!
+  branch: dev # Branch utama
+  # base_url diperlukan jika deploy di Vercel untuk autentikasi (lihat langkah 6)
+  base_url: https://your-oauth-provider.vercel.app 
+  local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Landing Page Content"
+    files:
+      - name: "landing"
+        label: "Landing Page"
+        file: "content/landing-page.json" # File target
+        description: "Edit konten teks di Landing Page"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "text" }
+          - { label: "Call to Action Text", name: "cta_text", widget: "string" }
+          - label: "Features Section"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Feature Name", name: "name", widget: "string" }
+              - { label: "Feature Detail", name: "detail", widget: "text" }          
