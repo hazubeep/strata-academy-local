@@ -7,7 +7,6 @@ export type CohortCardProps = {
   price: number;
   features: string[];
   isPopular?: boolean;
-  buttonText?: string;
 };
 
 export default function CohortCard({
@@ -16,7 +15,6 @@ export default function CohortCard({
   price,
   features,
   isPopular = false,
-  buttonText = "Pilih Paket",
 }: CohortCardProps) {
 
   const formattedPrice = new Intl.NumberFormat("id-ID", {
@@ -36,7 +34,6 @@ export default function CohortCard({
     </div>
   );
 
-  // Base Card 
   const CardContent = ({ isWrapped = false }: { isWrapped?: boolean }) => (
     <div
       className={`
@@ -63,7 +60,7 @@ export default function CohortCard({
 
         {/* Button */}
         <Button variant={isPopular ? "primary" : "secondary"} className="w-full">
-          {buttonText}
+          Pilih paket
         </Button>
 
         {/* Divider */}

@@ -2,8 +2,6 @@
 
 import { Quote } from "lucide-react";
 
-
-
 export default function TestimonialCard({ item }: any) {
   return (
     <div className="bg-white p-6 rounded-2xl h-full shadow-sm select-none">
