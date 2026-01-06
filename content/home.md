@@ -10,7 +10,7 @@ about:
     mahasiswa memahami konsep klinis dan riset secara mendalam.
   paragraf_2: Kami berfokus pada pemahaman fundamental, bukan sekadar hafalan.
     Telah diikuti oleh puluhan mahasiswa FK melalui pembelajaran yang interaktif
-    dan sistematis. agni
+    dan sistematis.aaa
 cohort:
   title: Kelas Cohort
   description: Pelatihan dan bimbingan berbasis evidence untuk mahasiswa
