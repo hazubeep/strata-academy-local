@@ -1,6 +1,7 @@
 ---
 hero:
-  title: Belajar kedokteran dengan metode terstruktur dan berbasis bukti. Hayuuuuuuuk
+  title: Belajar kedokteran dengan metode terstruktur dan berbasis bukti.
+    Hayuuuuuuuk slebew
   subtitle: StrataAcademy adalah platform pembelajaran kedokteran yang membantu
     mahasiswa memahami konsep klinis dan riset secara mendalam, bukan sekadar
     hafalan. Telah diikuti oleh puluhan mahasiswa FK melalui pembelajaran yang
