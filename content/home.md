@@ -1,6 +1,6 @@
 ---
 hero:
-  title: Belajar kedokteran dengan metode terstruktur dan berbasis bukti.
+  title: "Belajar kedokteran dengan metode terstruktur dan berbasis bukti. agni "
   subtitle: StrataAcademy adalah platform pembelajaran kedokteran yang membantu
     mahasiswa memahami konsep klinis dan riset secara mendalam, bukan sekadar
     hafalan. Telah diikuti oleh puluhan mahasiswa FK melalui pembelajaran yang
@@ -10,7 +10,7 @@ about:
     mahasiswa memahami konsep klinis dan riset secara mendalam.
   paragraf_2: Kami berfokus pada pemahaman fundamental, bukan sekadar hafalan.
     Telah diikuti oleh puluhan mahasiswa FK melalui pembelajaran yang interaktif
-    dan sistematis.aaa
+    dan sistematis.
 cohort:
   title: Kelas Cohort
   description: Pelatihan dan bimbingan berbasis evidence untuk mahasiswa
