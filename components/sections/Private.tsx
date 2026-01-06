@@ -16,7 +16,7 @@ export default function Private({ data }: { data?: PrivateSectionData }) {
   const packages = data?.packages || [];
 
   return (
-    <section id="privat" className="p-4 md:p-17.5  bg-default scroll-mt-28">
+    <section id="private" className="p-4 md:p-17.5  bg-default scroll-mt-20 lg:scroll-mt-14">
       <div className="mb-10 text-center">
         <h2 className="text-primary text-2xl font-bold mb-3 md:text-3xl">
           {data?.title ?? "Kelas Private"}

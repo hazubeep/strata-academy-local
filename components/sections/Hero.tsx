@@ -1,6 +1,6 @@
 import heroImage from "@/public/images/home-hero-doctor-pointing-her-hand.png"
 import Image from "next/image";
-import Button from "../Button";
+import CustomLink from "../CustomLink";
 
 interface HeroProps {
   data: {
@@ -37,12 +37,11 @@ export default function Hero({ data }: HeroProps) {
           {data.subtitle}
         </p>
         <div className="flex gap-x-3 items-center justify-center md:justify-start">
-          <Button variant="primary" size="md">Cohort Class</Button>
-          <Button variant="secondary" size="md">Private Class</Button>
+          <CustomLink href="#cohort" variant="primary" size="md">Cohort Class</CustomLink>
+          <CustomLink href="#private" variant="secondary" size="md">Private Class</CustomLink>
         </div>
       </div>
 
-      {/* Hero Image  */}
     </section>
 
   )

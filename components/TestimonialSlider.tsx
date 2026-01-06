@@ -20,8 +20,6 @@ export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
     data && data.length ? data : []
   );
 
-  console.log("TestimonialSlider slides:", slides);
-
   if (!slides || slides.length === 0) return null;
 
   return (

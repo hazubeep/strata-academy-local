@@ -61,7 +61,7 @@ export default function OrderForm({ packages }: OrderFormProps) {
       </div>
 
       <div className="col-span-1 md:col-span-2 space-y-2 mt-2">
-        <label className="text-gray-500 text-sm ml-1">Pilih Kelas Privat</label>
+        <label className="text-gray-500 text-sm ml-1 pb-20">Pilih Kelas Privat</label>
         <div className="relative">
           <select
             name="kelas"
@@ -69,7 +69,7 @@ export default function OrderForm({ packages }: OrderFormProps) {
             defaultValue=""
           >
             <option value="" disabled>
-              Pilih
+              Pilih Private class
             </option>
             {packageOptions.map((pkg, idx) => (
               <option key={idx} value={pkg.title || ""}>

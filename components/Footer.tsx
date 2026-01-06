@@ -6,20 +6,20 @@ import {
   Mail,
   ChevronRight
 } from 'lucide-react';
-import { SiFacebook, SiInstagram, SiX } from '@icons-pack/react-simple-icons';
+import { SiWhatsapp, SiInstagram, SiX } from '@icons-pack/react-simple-icons';
 import Image from 'next/image';
 
 const quickLinks = [
   { name: 'Beranda', href: '#home' },
+  { name: 'Tentang Kami', href: '#about' },
   { name: 'Cohort Class', href: '#cohort' },
   { name: 'Kelas Privat', href: '#privat' },
-  { name: 'Tentang Kami', href: '#about' },
   { name: 'Testimoni', href: '#testimoni' },
   { name: 'FAQ', href: '#faq' },
 ]
 const socialLinks = [
   { name: 'Instagram', icon: <SiInstagram size={24} />, href: '#' },
-  { name: 'Facebook', icon: <SiFacebook size={24} />, href: '#' },
+  { name: 'Whatsapp', icon: <SiWhatsapp size={24} />, href: 'https://wa.me/6281717627274' },
   { name: 'X (Twitter)', icon: <SiX size={24} />, href: '#' },
 ];
 
@@ -44,7 +44,7 @@ export default function Footer() {
             className="w-auto h-auto"
           />
           <p className="text-white/90 leading-relaxed text-base max-w-[45ch]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit unde id distinctio fugiat nulla incidunt ipsum esse hic aperiam aliquid inventore architecto sequi itaque ad adipisci, vitae quia error voluptatibus.
+            Platform akademik yang membantu mahasiswa memahami akademik dasar, riset medis, publikasi ilmiah, dan persiapan karier akademik secara terarah.
           </p>
         </div>
 

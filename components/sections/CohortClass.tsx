@@ -28,7 +28,7 @@ export default function CohortClass({ data }: { data?: CohortSectionData }) {
   return (
     <section
       id="cohort"
-      className="p-3.5 md:p-17.5 bg-default scroll-mt-8"
+      className="p-3.5 md:p-17.5 bg-default scroll-mt-20 lg:scroll-mt-8"
     >
       <div className="mb-10 text-center">
         <h2 className="text-primary text-3xl font-bold mb-3 md:text-4xl leading-tight">

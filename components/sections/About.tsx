@@ -12,15 +12,15 @@ export default function About({ data }: AboutProps) {
   return (
     <section
       id="about"
-      className="m-4 py-7.5 bg-default rounded-3xl md:mx-16 lg:m-17.5 lg:p-7.5 md:grid md:grid-cols-[400px_1fr] md:gap-12 items-center scroll-mt-48"
+      className="m-4 py-7.5 bg-default rounded-3xl md:mx-16 lg:m-17.5 lg:p-7.5 md:grid md:grid-cols-[400px_1fr] md:gap-12 items-center scroll-mt-20 lg:scroll-mt-48"
     >
       <div className="flex items-center justify-center mb-8 md:mb-0">
         <Image
           src={aboutImage}
-          width={400}
-          height={400}
+          width={600}
+          height={600}
           alt="Tentang StrataAcademy"
-          className="w-full max-w-75 md:max-w-full h-auto"
+          className="px-4 w-auto max-w-75 md:max-w-full h-auto md:p-0"
         />
       </div>
 

@@ -12,7 +12,7 @@ const navLinks = [
   { name: 'Beranda', href: '#home' },
   { name: 'Tentang Kami', href: '#about' },
   { name: 'Cohort Class', href: '#cohort' },
-  { name: 'Kelas Privat', href: '#privat' },
+  { name: 'Kelas Privat', href: '#private' },
   { name: 'Testimoni', href: '#testimoni' },
   { name: 'FAQ', href: '#faq' },
 ]
