@@ -1,34 +1,6 @@
 import CohortSlider from "../CohortSlider"
 import { CohortCardProps } from "@/components/CohortCard";
 
-// const cohortClassesData: CohortCardProps[] = [
-//   {
-//     title: "Paket Blok 1",
-//     description: "Record Cohort Class dan Try Out Intensive Blok Kardio.",
-//     price: 300000,
-//     features: ["Konsep klinis inti", "Latihan soal", "Mentoring"],
-//   },
-//   {
-//     title: "Paket Populer Bundling",
-//     description: "Full Bundling Record semua blok semester ini.",
-//     price: 1200000,
-//     features: ["Akses seumur hidup", "Konsultasi privat", "E-sertifikat", "Komunitas"],
-//     isPopular: true,
-//   },
-//   {
-//     title: "Paket Riset",
-//     description: "Metodologi riset dan bimbingan skripsi kedokteran.",
-//     price: 500000,
-//     features: ["Analisis data", "Penulisan jurnal", "Reviewer FK"],
-//   },
-//   {
-//     title: "Paket UKMPPD",
-//     description: "Persiapan intensif menghadapi ujian kompetensi.",
-//     price: 750000,
-//     features: ["CBT Simulai", "OSCE Prep", "Bank soal 5 tahun"],
-//   },
-// ];
-
 type CohortSectionData = {
   title?: string;
   description?: string;
@@ -41,7 +13,6 @@ type CohortSectionData = {
     buttonText?: string;
   }>;
 };
-
 
 export default function CohortClass({ data }: { data?: CohortSectionData }) {
 
@@ -68,7 +39,6 @@ export default function CohortClass({ data }: { data?: CohortSectionData }) {
         </p>
       </div>
 
-      {/* Implementasi Slider */}
       <div className=" w-full mx-auto">
         <CohortSlider data={items} />
       </div>

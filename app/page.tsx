@@ -9,6 +9,10 @@ import Testimonial from "@/components/sections/Testimonial";
 import Order from "@/components/sections/Order";
 import Private from "@/components/sections/Private";
 
+// Khusus local
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 function getHomeData() {
   const filePath = path.join(process.cwd(), "content", "home.md");
   const fileContent = fs.readFileSync(filePath, "utf8");
@@ -35,7 +39,7 @@ export default function Home() {
       <Private data={data.private_section} />
 
       {/* ORDER FORM SECTION */}
-      <Order />
+      <Order data={data.private_section} />
 
       {/* TESTIMONIAL SECTION */}
       <Testimonial data={data.testimonial} />

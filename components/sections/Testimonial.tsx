@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import TestimonialSlider from "../TestimonialSlider";
 import testimonialImage from "@/public/images/home-testimonial-doctor-writing.png";

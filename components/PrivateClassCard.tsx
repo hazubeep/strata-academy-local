@@ -22,7 +22,7 @@ export default function PrivateClassCard({ item }: { item?: PrivatePackage }) {
           {item?.title ?? "Paket Private"}
         </h2>
 
-        <p className="text-secondary text-base leading-tight">
+        <p className="text-secondary text-base leading-relaxed max-w-prose">
           {item?.description ??
             "Bimbingan intensif satu lawan satu untuk hasil maksimal."}
         </p>
@@ -34,7 +34,7 @@ export default function PrivateClassCard({ item }: { item?: PrivatePackage }) {
         {features.map((feature, index) => (
           <div key={index} className="flex items-start gap-x-2">
             <CheckCircle2 className=" fill-primary text-white w-5 h-5 shrink-0" />
-            <p className="text-secondary text-base font-medium leading-tight">
+            <p className="text-secondary text-base font-medium leading-relaxed">
               {feature}
             </p>
           </div>

@@ -1,15 +1,24 @@
-'use client';
+"use client";
 
 import Button from "./Button";
 
-export default function OrderForm() {
+type OrderFormProps = {
+  packages?: Array<{
+    title?: string;
+    description?: string;
+  }>;
+};
 
-  const inputBaseStyles = "w-full bg-white secondary text-gray-700 placeholder-gray-400 border-none rounded-lg px-4 py-3.5 focus:ring-2 focus:ring-primary focus:outline-none transition-all";
+export default function OrderForm({ packages }: OrderFormProps) {
+  const inputBaseStyles =
+    "w-full bg-white secondary text-gray-700 placeholder-gray-400 border-none rounded-lg px-4 py-3.5 focus:ring-2 focus:ring-primary focus:outline-none transition-all";
+  const packageOptions = packages && packages.length > 0 ? packages : [];
 
   return (
-
-    <form action="#" className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-
+    <form
+      action="#"
+      className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
+    >
       <div className="col-span-1">
         <input
           type="text"
@@ -59,13 +68,29 @@ export default function OrderForm() {
             className={`${inputBaseStyles} appearance-none cursor-pointer`}
             defaultValue=""
           >
-            <option value="" disabled>Pilih</option>
-            <option value="Test 1">Test</option>
-            <option value="Test 2">Test 2</option>
-            <option value="Test 3">Test 3</option>
+            <option value="" disabled>
+              Pilih
+            </option>
+            {packageOptions.map((pkg, idx) => (
+              <option key={idx} value={pkg.title || ""}>
+                {pkg.title}
+              </option>
+            ))}
           </select>
           <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
           </div>
         </div>
       </div>
@@ -96,7 +121,6 @@ export default function OrderForm() {
           Kirim
         </Button>
       </div>
-
     </form>
-  )
+  );
 }

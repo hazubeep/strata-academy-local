@@ -1,12 +1,11 @@
 "use client";
 
-import { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import profilePicture from "@/public/images/home-about-doctor-holding-pen.png";
 import TestimonialCard from "./TestimonialCard";
+import { useState } from "react";
 
 type Testimonial = {
   id?: number;
@@ -15,38 +14,16 @@ type Testimonial = {
   role?: string;
 };
 
-const defaultTestimonials: Testimonial[] = [
-  {
-    id: 1,
-    content:
-      "Di blok Repro aku selalu bingung hubungan hormon, siklus, dan penyakit. Tapi di cohort Repro StrataAcademy dijelasin dengan mapping yang rapi banget.",
-    name: "Mahasiswa Preklinik",
-    role: "Blok Reproduksi",
-  },
-  {
-    id: 2,
-    content:
-      "Materi yang disampaikan sangat relevan dengan kasus klinis sehari-hari. Mentornya juga sangat suportif.",
-    name: "Mahasiswa Preklinik",
-    role: "Blok Kardiologi",
-  },
-  {
-    id: 3,
-    content:
-      "Sangat puas dengan hasilnya. Performa website meningkat drastis setelah menggunakan template ini.",
-    name: "Mahasiswa Preklinik",
-    role: "Blok Respirasi",
-  },
-  {
-    id: 4,
-    content:
-      "Desain yang sangat bersih dan kode yang mudah dipahami. Sangat membantu.",
-    name: "Dokter Muda",
-    role: "Stase Bedah",
-  },
-];
-
 export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
+
+  const [slides] = useState<Testimonial[]>(
+    data && data.length ? data : []
+  );
+
+  console.log("TestimonialSlider slides:", slides);
+
+  if (!slides || slides.length === 0) return null;
+
   return (
     <div
       className="
@@ -64,6 +41,9 @@ export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
       "
     >
       <Swiper
+        key={
+          slides.length
+        }
         modules={[Pagination, Autoplay]}
         spaceBetween={24}
         slidesPerView={1}
@@ -72,7 +52,7 @@ export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        loop={true}
+        loop={slides.length > 1}
         // --- BREAKPOINTS ---
         breakpoints={{
           640: {
@@ -80,7 +60,7 @@ export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 3, // Desktop: 3 slide
+            slidesPerView: 2.5, // Desktop: 3 slide
             spaceBetween: 30,
           },
         }}
@@ -92,8 +72,7 @@ export default function TestimonialSlider({ data }: { data?: Testimonial[] }) {
         }
         className="pb-16!"
       >
-        {(data && data.length ? data : defaultTestimonials).map((item, i) => (
-          // Pastikan tinggi otomatis agar rapi
+        {slides.map((item, i) => (
           <SwiperSlide key={item.id ?? i} className="h-auto lg:min-w-125">
             <TestimonialCard item={item} />
           </SwiperSlide>

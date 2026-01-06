@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import logo from "@/public/logo.png"
-import Button from './Button'
 import CustomLink from './CustomLink'
 
 const navLinks = [

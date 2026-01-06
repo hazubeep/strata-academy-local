@@ -27,7 +27,6 @@ export default function CustomLink({
 
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-colors rounded-full focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed';
 
-  // Deteksi otomatis jika link eksternal
   const isExternal = href.startsWith('http');
   const externalProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -37,8 +36,8 @@ export default function CustomLink({
     <a
       href={href}
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...externalProps} // Otomatis aman jika eksternal
-      {...props}         // Memungkinkan override manual jika perlu
+      {...externalProps}
+      {...props}
     >
       {children}
     </a>

@@ -3,9 +3,8 @@ import aboutImage from "@/public/images/home-about-doctor-holding-pen.png"
 
 interface AboutProps {
   data: {
-    title: string;
-    content: string; // Ini nanti berupa markdown string
-    avatar: string;
+    paragraf_1: string;
+    paragraf_2: string;
   };
 }
 
@@ -29,13 +28,13 @@ export default function About({ data }: AboutProps) {
         <div className="p-6 border border-white rounded-2xl shadow-sm bg-white/50 backdrop-blur-sm">
           <h2 className="mb-3 text-xl font-bold text-primary md:text-4xl">Sekilas Tentang Kami</h2>
           <p className="text-secondary leading-relaxed">
-            {data.title}
+            {data.paragraf_1}
           </p>
         </div>
 
         <div className="p-6 border border-white rounded-2xl shadow-sm bg-white/50 backdrop-blur-sm">
           <p className="text-secondary leading-relaxed">
-            {data.content}
+            {data.paragraf_2}
           </p>
         </div>
       </div>

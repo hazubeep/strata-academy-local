@@ -1,49 +1,7 @@
 import Image from "next/image";
-import AccordionGroup, { FAQItemData } from "../AccordionGroup";
+import AccordionGroup from "../AccordionGroup";
 import faqImage from "@/public/images/home-faq-doctor-writing-on-her-note.png";
 
-const faqData: FAQItemData[] = [
-  {
-    id: 1,
-    question: "Bagaimana cara melakukan pemesanan?",
-    answer:
-      "Anda dapat melakukan pemesanan langsung melalui website kami dengan memilih produk yang diinginkan, menambahkannya ke keranjang, dan mengikuti instruksi checkout yang tersedia.",
-  },
-  {
-    id: 2,
-    question: "Apakah ada garansi pengembalian uang?",
-    answer:
-      "Ya, kami memberikan garansi 30 hari uang kembali jika produk yang Anda terima tidak sesuai dengan deskripsi atau mengalami kerusakan teknis yang tidak bisa diperbaiki.",
-  },
-  {
-    id: 3,
-    question: "Metode pembayaran apa saja yang didukung?",
-    answer:
-      "Kami mendukung berbagai metode pembayaran termasuk transfer bank (BCA, Mandiri, BNI), kartu kredit, serta e-wallet seperti GoPay, OVO, dan Dana.",
-  },
-  {
-    id: 4,
-    question: "Berapa lama waktu pengiriman biasanya?",
-    answer:
-      "Untuk wilayah Jabodetabek, pengiriman biasanya memakan waktu 1-2 hari kerja. Untuk luar wilayah tersebut, estimasi waktu adalah 3-5 hari kerja tergantung ekspedisi yang dipilih.",
-  },
-  {
-    id: 5,
-    question: "Apakah saya bisa membatalkan langganan kapan saja?",
-    answer:
-      "Tentu saja. Anda dapat membatalkan langganan kapan saja melalui pengaturan akun Anda tanpa biaya tambahan. Akses Anda akan tetap aktif hingga akhir periode penagihan berjalan.",
-  },
-];
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-interface FAQProps {
-  data: {
-    title: string;
-    faqs: FAQItem[];
-  };
-}
 
 export default function Faq({
   data,

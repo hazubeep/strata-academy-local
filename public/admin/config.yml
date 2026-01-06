@@ -47,7 +47,7 @@ collections:
             name: "hero"
             widget: "object" 
             fields:
-              - { label: "Headline", name: "title", widget: "string" }
+              - { label: "Headline", name: "title", widget: "text" }
               - { label: "Subheadline", name: "subtitle", widget: "text" }
 
           # --- SECTION 2: ABOUT ---
@@ -55,8 +55,8 @@ collections:
             name: "about"
             widget: "object"
             fields:
-              - { label: "Judul", name: "title", widget: "string" }
-              - { label: "Deskripsi", name: "content", widget: "markdown" }
+              - { label: "Paragraf 1", name: "paragraf_1", widget: "text" }
+              - { label: "Paragraf 2", name: "paragraf_2", widget: "text" }
 
           # --- SECTION 3: COHORT ---
           - label: "Cohort Section"
@@ -66,27 +66,25 @@ collections:
               - label: "Daftar Paket"
                 name: "packages"
                 widget: "list"
+                summary: "{{title}} - Rp {{price}}"  # <-- SUMMARY DITAMBAHKAN
                 fields:
                   - { label: "Judul Paket", name: "title", widget: "string" }
-                  - {
-                      label: "Deskripsi Paket",
-                      name: "description",
-                      widget: "text",
-                    }
+                  - { label: "Deskripsi Paket", name: "description", widget: "text" }
                   - { label: "Harga (angka)", name: "price", widget: "number" }
-                  - { label: "Fitur", name: "features", widget: "list" }
+                  # Fix Spasi (Features):
+                  # --- Bagian Fitur di Packages ---
+                  - label: "Fitur"
+                    name: "features"
+                    widget: "list"
+                    summary: "{{fields.item}}"  # <--- TAMBAHKAN INI
+                    field: { label: "Deskripsi Fitur", name: "item", widget: "string" }
                   - {
                       label: "Populer?",
                       name: "isPopular",
                       widget: "boolean",
                       default: false,
                     }
-                  - {
-                      label: "Teks Tombol (opsional)",
-                      name: "buttonText",
-                      widget: "string",
-                      required: false,
-                    }
+
 
           # --- SECTION 4: PRIVATE ---
           - label: "Private Class Section"
@@ -96,26 +94,16 @@ collections:
               - label: "Daftar Paket"
                 name: "packages"
                 widget: "list"
+                summary: "{{title}}"  # <-- SUMMARY DITAMBAHKAN
                 fields:
                   - { label: "Judul Paket", name: "title", widget: "string" }
-                  - {
-                      label: "Deskripsi Paket",
-                      name: "description",
-                      widget: "text",
-                    }
-                  - { label: "Fitur", name: "features", widget: "list" }
-                  - {
-                      label: "Harga (opsional)",
-                      name: "price",
-                      widget: "string",
-                      required: false,
-                    }
-                  - {
-                      label: "Teks Tombol (opsional)",
-                      name: "buttonText",
-                      widget: "string",
-                      required: false,
-                    }
+                  - { label: "Deskripsi Paket", name: "description", widget: "text" }
+                  # Fix Spasi (Features):
+                  - label: "Fitur"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Deskripsi Fitur", name: "item", widget: "string" }
+                          
 
           # --- SECTION 5: TESTIMONIAL ---
           - label: "Testimonial Section"
@@ -125,15 +113,11 @@ collections:
               - label: "Daftar Testimoni"
                 name: "items"
                 widget: "list"
+                summary: "{{name}} - {{role}}"  # <-- MUNCULKAN NAMA & ROLE
                 fields:
                   - { label: "Konten", name: "content", widget: "text" }
                   - { label: "Nama", name: "name", widget: "string" }
-                  - {
-                      label: "Role",
-                      name: "role",
-                      widget: "string",
-                      required: false,
-                    }
+                  - { label: "Role", name: "role", widget: "string" }
 
           # --- SECTION 6: FAQ ---
           - label: "FAQ Section"
@@ -143,7 +127,7 @@ collections:
               - label: "Daftar Pertanyaan"
                 name: "faqs"
                 widget: "list" 
+                summary: "{{question}}"  # <-- MUNCULKAN PERTANYAAN
                 fields:
                   - { label: "Pertanyaan", name: "question", widget: "string" }
-                  - { label: "Jawaban", name: "answer", widget: "markdown" } # Markdown agar bisa bold/link
-
+                  - { label: "Jawaban", name: "answer", widget: "text" }
